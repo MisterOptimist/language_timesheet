@@ -20,11 +20,5 @@
   <%= @timesheet.day %>
 </p>
 
-<p>
-  <b>User:</b>
-  <%= @timesheet.user %>
-</p>
-
-
-<%= link_to 'Edit', edit_timesheet_path(@timesheet) %> |
-<%= link_to 'Back', timesheets_path %>
+<%= link_to 'Edit', edit_user_timesheet_path(@timesheet) %> |
+<%= link_to 'Back', user_timesheets_path %>

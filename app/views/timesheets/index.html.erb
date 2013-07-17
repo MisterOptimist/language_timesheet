@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Teacher</th>
+    <th>TTTeacher</th>
     <th>Study</th>
     <th>Conversation</th>
     <th>Day</th>
@@ -18,14 +18,12 @@
     <td><%= timesheet.study %></td>
     <td><%= timesheet.conversation %></td>
     <td><%= timesheet.day %></td>
-    <td><%= timesheet.user %></td>
-    <td><%= link_to 'Show', timesheet %></td>
-    <td><%= link_to 'Edit', edit_timesheet_path(timesheet) %></td>
-    <td><%= link_to 'Destroy', timesheet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <td><%= link_to 'Show', user_timesheet_path(@user, timesheet) %></td>
+    <td><%= link_to 'Edit', edit_user_timesheet_path(@user, timesheet) %></td>
+    <td><%= link_to 'Destroy', [@user, timesheet], method: :delete, data: { confirm: 'Are you sure?' } %></td>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Timesheet', new_timesheet_path %>
+<%= link_to 'New Timesheet', new_user_timesheet_path(@user) %>

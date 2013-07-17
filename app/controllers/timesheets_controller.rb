@@ -2,8 +2,9 @@ class TimesheetsController < ApplicationController
   # GET /timesheets
   # GET /timesheets.json
   def index
-    @timesheets = Timesheet.all
-
+    @user = User.find(params[:user_id])
+    @timesheets = @user.timesheets 
+   
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @timesheets }
@@ -13,8 +14,10 @@ class TimesheetsController < ApplicationController
   # GET /timesheets/1
   # GET /timesheets/1.json
   def show
+    @user = User.find(params[:user_id])
     @timesheet = Timesheet.find(params[:id])
 
+   
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @timesheet }
@@ -24,7 +27,10 @@ class TimesheetsController < ApplicationController
   # GET /timesheets/new
   # GET /timesheets/new.json
   def new
+    @user = User.find(params[:user_id])
     @timesheet = Timesheet.new
+ 
+    
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,17 +40,21 @@ class TimesheetsController < ApplicationController
 
   # GET /timesheets/1/edit
   def edit
-    @timesheet = Timesheet.find(params[:id])
+    @user = User.find(params[:user_id])
+    @timesheet = @user.timesheets.find(params[:id])
+    
   end
 
   # POST /timesheets
   # POST /timesheets.json
   def create
-    @timesheet = Timesheet.new(params[:timesheet])
+    @user = User.find(params[:user_id])
+    @timesheet = @user.timesheets.build(params[:timesheet])
+    
 
     respond_to do |format|
       if @timesheet.save
-        format.html { redirect_to @timesheet, notice: 'Timesheet was successfully created.' }
+        format.html { redirect_to user_timesheet_path(@user, @timesheet), notice: 'Timesheet was successfully created.' }
         format.json { render json: @timesheet, status: :created, location: @timesheet }
       else
         format.html { render action: "new" }
@@ -56,7 +66,8 @@ class TimesheetsController < ApplicationController
   # PUT /timesheets/1
   # PUT /timesheets/1.json
   def update
-    @timesheet = Timesheet.find(params[:id])
+    @user = User.find(params[:user_id])
+    @timesheet = @user.timesheets.find(params[:id])
 
     respond_to do |format|
       if @timesheet.update_attributes(params[:timesheet])
@@ -72,12 +83,16 @@ class TimesheetsController < ApplicationController
   # DELETE /timesheets/1
   # DELETE /timesheets/1.json
   def destroy
-    @timesheet = Timesheet.find(params[:id])
+    @user = User.find(params[:user_id])
+    @timesheet = @user.timesheets.find(params[:id])
     @timesheet.destroy
 
     respond_to do |format|
-      format.html { redirect_to timesheets_url }
+      format.html { redirect_to user_url(@timesheet.user_id ) }
       format.json { head :no_content }
     end
   end
+
+ 
+
 end
