@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teacher: 9.99
+  study: 9.99
+  conversation: 9.99
+  day: MyString
+  user: 
+
+two:
+  teacher: 9.99
+  study: 9.99
+  conversation: 9.99
+  day: MyString
+  user: 

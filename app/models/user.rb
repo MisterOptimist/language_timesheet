@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+	has_many :timesheets
   rolify
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

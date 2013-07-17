@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Teacher:</b>
+  <%= @timesheet.teacher %>
+</p>
+
+<p>
+  <b>Study:</b>
+  <%= @timesheet.study %>
+</p>
+
+<p>
+  <b>Conversation:</b>
+  <%= @timesheet.conversation %>
+</p>
+
+<p>
+  <b>Day:</b>
+  <%= @timesheet.day %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @timesheet.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_timesheet_path(@timesheet) %> |
+<%= link_to 'Back', timesheets_path %>
