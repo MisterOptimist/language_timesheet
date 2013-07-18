@@ -88,7 +88,7 @@ class TimesheetsController < ApplicationController
     @timesheet.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_url(@timesheet.user_id ) }
+      format.html { redirect_to user_timesheets_path }
       format.json { head :no_content }
     end
   end

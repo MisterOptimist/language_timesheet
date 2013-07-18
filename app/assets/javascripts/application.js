@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
+//= require timesheets
 //= require_tree .
 
 
@@ -29,6 +30,6 @@ $("table").tablecloth({
 
 $("table").tablesorter({/* custom tablesorter options */});
 
-$('[data-behaviour~=datepicker]').datepicker({"format": "yyyy-mm-dd", "weekStart": 1, "autoclose": true});
+$('[data-behaviour~=datepicker]').datepicker({"format": "dd/mm/yy", "weekStart": 1, "autoclose": true});
 
 

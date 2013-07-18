@@ -1,16 +1,12 @@
 <%= simple_form_for([@user, @timesheet]) do |f| %>
-  <%= f.error_notification %>
+  <%= render 'error_messages' %>
+
 
   <div class="form-inputs">
     <%= f.input :teacher %>
     <%= f.input :study %>
     <%= f.input :conversation %>
     <%= f.input :day, :required => true, :input_html => { data: {behaviour: "datepicker"}}, :as => :string %>
-<script>
-  $(".date-single-view").datepicker({
-      dateFormat: "yyyy-mm-dd"
-    });
-    </script>
 
 
 
