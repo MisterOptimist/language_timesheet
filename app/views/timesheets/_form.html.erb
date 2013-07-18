@@ -5,9 +5,15 @@
     <%= f.input :teacher %>
     <%= f.input :study %>
     <%= f.input :conversation %>
-    <%= f.input :day, collection: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], prompt: "Select Day" %>
- 
-    
+    <%= f.input :day, :required => true, :input_html => { data: {behaviour: "datepicker"}}, :as => :string %>
+<script>
+  $(".date-single-view").datepicker({
+      dateFormat: "yyyy-mm-dd"
+    });
+    </script>
+
+
+
   </div>
 
   <div class="form-actions">
