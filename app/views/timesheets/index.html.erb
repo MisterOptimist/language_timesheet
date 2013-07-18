@@ -1,15 +1,15 @@
-<h1>Listing timesheets</h1>
+<h1>Hours Studied</h1>
 
 <table class="table table-condensed">  
 <tr>
-    <th>TTTeacher</th>
+    <th>Teacher</th>
     <th>Study</th>
     <th>Conversation</th>
     <th>Day</th>
     <th>Date Posted</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
  </thead>
   <tbody>
@@ -22,7 +22,7 @@
     <td><%= time_ago_in_words(timesheet.created_at) %> ago</td>
   <td><%= link_to 'Show', user_timesheet_path(@user, timesheet) %></td>
     <td><%= link_to 'Edit', edit_user_timesheet_path(@user, timesheet) %></td>
-    <td><%= link_to 'Destroy', [@user, timesheet], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Destroy', [@user, timesheet], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini btn-danger" %></td>
     </tr>
 <% end %>
 </tbody>
@@ -30,4 +30,4 @@
 
 <br />
 
-<%= link_to 'New Timesheet', new_user_timesheet_path(@user) %>
+<%= link_to 'New Timesheet', new_user_timesheet_path(@user), :class => "btn btn-primary" %>

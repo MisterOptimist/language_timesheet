@@ -71,7 +71,7 @@ class TimesheetsController < ApplicationController
 
     respond_to do |format|
       if @timesheet.update_attributes(params[:timesheet])
-        format.html { redirect_to @timesheet, notice: 'Timesheet was successfully updated.' }
+        format.html { redirect_to user_timesheet_path(@user, @timesheet), notice: 'Timesheet was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
