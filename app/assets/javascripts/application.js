@@ -14,3 +14,17 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+
+$("table").tablecloth({
+  theme: "default",
+  bordered: true,
+  condensed: true,
+  striped: true,
+  sortable: true,
+  clean: true,
+  cleanElements: "th td",
+  customClass: "myTable"
+});
+
+$("table").tablesorter({/* custom tablesorter options */});

@@ -1,27 +1,31 @@
 <h1>Listing timesheets</h1>
 
-<table>
-  <tr>
+<table class="table table-condensed">  
+<tr>
     <th>TTTeacher</th>
     <th>Study</th>
     <th>Conversation</th>
     <th>Day</th>
+    <th>Date Posted</th>
     <th>User</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
-
+ </thead>
+  <tbody>
 <% @timesheets.each do |timesheet| %>
   <tr>
     <td><%= timesheet.teacher %></td>
     <td><%= timesheet.study %></td>
     <td><%= timesheet.conversation %></td>
     <td><%= timesheet.day %></td>
+    <td><%= time_ago_in_words(timesheet.created_at) %> ago</td>
   <td><%= link_to 'Show', user_timesheet_path(@user, timesheet) %></td>
     <td><%= link_to 'Edit', edit_user_timesheet_path(@user, timesheet) %></td>
     <td><%= link_to 'Destroy', [@user, timesheet], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
