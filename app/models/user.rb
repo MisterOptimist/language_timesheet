@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  after_create :assign_default_role
 	has_many :timesheets
   rolify
   # Include default devise modules. Others available are:
@@ -10,5 +11,10 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+
+  def assign_default_role
+    add_role(:user) if self.roles.blank?
+  end
   
 end
