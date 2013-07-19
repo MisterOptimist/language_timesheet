@@ -30,6 +30,9 @@ $("table").tablecloth({
 
 $("table").tablesorter({/* custom tablesorter options */});
 
-$('[data-behaviour~=datepicker]').datepicker({"format": "dd/mm/yy", "weekStart": 1, "autoclose": true});
 
 
+$(".datepicker").datepicker({
+    altField: "#recorded-at-alt",
+    altFormat: "yy-mm-d"
+  });

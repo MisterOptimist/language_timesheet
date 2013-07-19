@@ -18,6 +18,8 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem "twitter-bootstrap-rails"
 gem 'bootstrap-datepicker-rails'
 gem 'jquery-ui-themes'
+
+gem 'kaminari'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

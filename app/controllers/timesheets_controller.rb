@@ -3,7 +3,7 @@ class TimesheetsController < ApplicationController
   # GET /timesheets.json
   def index
     @user = User.find(params[:user_id])
-    @timesheets = @user.timesheets 
+    @timesheets = @user.timesheets.page(params[:page]).per(7)
    
     respond_to do |format|
       format.html # index.html.erb

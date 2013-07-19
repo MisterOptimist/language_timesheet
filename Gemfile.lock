@@ -72,6 +72,9 @@ GEM
     jquery-ui-themes (0.0.11)
       httparty
     json (1.8.0)
+    kaminari (0.14.1)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     less (2.3.2)
       commonjs (~> 0.2.6)
     less-rails (2.3.3)
@@ -162,6 +165,7 @@ DEPENDENCIES
   figaro
   jquery-rails
   jquery-ui-themes
+  kaminari
   less-rails
   quiet_assets
   rails (= 3.2.13)

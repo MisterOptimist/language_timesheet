@@ -3,10 +3,12 @@
 
 
   <div class="form-inputs">
+    <%= f.input :day, :as => :string, :input_html => { :class => 'datepicker'} %>
+    <%= f.input :day, :as => :hidden, :input_html => { :id => 'recorded-at-alt'} %>
     <%= f.input :teacher %>
     <%= f.input :study %>
     <%= f.input :conversation %>
-    <%= f.input :day, :required => true, :input_html => { data: {behaviour: "datepicker"}}, :as => :string %>
+    
 
 
 
