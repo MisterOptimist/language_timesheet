@@ -3,8 +3,8 @@ class TimesheetsController < ApplicationController
   # GET /timesheets.json
   def index
     @user = User.find(params[:user_id])
-    @timesheets = @user.timesheets.page(params[:page]).per(7)
-   
+    @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week(:saturday)).order('created_at DESC').page(params[:page]).per(7)
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @timesheets }

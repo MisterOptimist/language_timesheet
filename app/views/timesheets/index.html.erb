@@ -1,5 +1,7 @@
-<h1>Hours Studied</h1>
-<%= paginate @timesheets %>
+<div class="page-header">
+  <h1>Hours Studied <small>This week</small></h1>
+</div>
+
 <table class="table table-condensed">  
 <tr>
     
@@ -27,8 +29,13 @@
 <% end %>
 </tbody>
 </table>
-
+ <div class="span4 pull-right" style="text-align:right">
+         <%= paginate @timesheets %>
+      </div>
+    
 <br />
+
+
 
 <%= link_to 'New Timesheet', new_user_timesheet_path, :class => "btn btn-primary" %>
 
