@@ -17,7 +17,7 @@
 //= require_tree .
 
 
-$("table").tablecloth({
+$(".nicetable").tablecloth({
   theme: "default",
   bordered: true,
   condensed: true,

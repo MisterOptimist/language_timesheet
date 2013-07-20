@@ -6,6 +6,7 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
       can [:read, :update], Timesheet
+      can :manage, Forem
     else
       can :manage, User, :id => user.id
       can :manage, Timesheet, :user => { :id => user.id }

@@ -1,9 +1,9 @@
 <ul class="nav pull-left">
-<li><%= link_to 'Home', root_path %></li>
-<li><%= link_to 'Statistics', users_path %></li>
-<li><%= link_to 'Timesheets', users_path %></li>
-<li><%= link_to 'Forum', users_path %></li>
-<li><%= link_to 'Resources', users_path %></li>
+<li><%= link_to 'Home', main_app.root_path %></li>
+<li><%= link_to 'Statistics', main_app.root_path %></li>
+<li><%= link_to 'Timesheets', main_app.root_path %></li>
+<li><%= link_to 'Forum', main_app.forem_path %></li>
+<li><%= link_to 'Resources', main_app.root_path %></li>
 </ul>
 
 
@@ -22,23 +22,23 @@
 <% if user_signed_in? %>
 <% if current_user.has_role? :admin %>
       <li>
-      <%= link_to 'Admin', users_path %>
+      <%= link_to 'Admin', main_app.users_path %>
       </li>
     <% end %>
  <li class="dropdown">
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, <%= current_user.name %> <b class="caret"></b></a>
      <ul class="dropdown-menu">
-        <li><%= link_to '<i class="icon-cog"></i> Preferences'.html_safe, edit_user_registration_path %>
+        <li><%= link_to '<i class="icon-cog"></i> Preferences'.html_safe, main_app.edit_user_registration_path %>
         <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
         <li class="divider"></li>
-        <li><%= link_to '<i class="icon-off"></i> Logout'.html_safe, destroy_user_session_path, :method => 'delete'%></li>
+        <li><%= link_to '<i class="icon-off"></i> Logout'.html_safe, main_app.destroy_user_session_path, :method => 'delete'%></li>
       </ul>
 
   <% else %>
     <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Sign up', main_app.new_user_registration_path %>
     <li>
-    <%= link_to 'Login', new_user_session_path %>
+    <%= link_to 'Login', main_app.new_user_session_path %>
     </li>
     </li>
   <% end %>

@@ -16,5 +16,11 @@ class User < ActiveRecord::Base
   def assign_default_role
     add_role(:user) if self.roles.blank?
   end
+
+  def to_s
+  name
+  end
+
+ 
   
 end
