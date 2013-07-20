@@ -1,8 +1,12 @@
 class TimesheetsController < ApplicationController
+
+  load_and_authorize_resource :user
+  load_and_authorize_resource :timesheet, :through => :user, :shallow => true
+
+
   # GET /timesheets
   # GET /timesheets.json
   def index
-    @user = User.find(params[:user_id])
     @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
     
     respond_to do |format|
@@ -14,7 +18,6 @@ class TimesheetsController < ApplicationController
   # GET /timesheets/1
   # GET /timesheets/1.json
   def show
-    @user = User.find(params[:user_id])
     @timesheet = Timesheet.find(params[:id])
 
    
@@ -27,7 +30,6 @@ class TimesheetsController < ApplicationController
   # GET /timesheets/new
   # GET /timesheets/new.json
   def new
-    @user = User.find(params[:user_id])
     @timesheet = Timesheet.new
  
     
@@ -40,7 +42,6 @@ class TimesheetsController < ApplicationController
 
   # GET /timesheets/1/edit
   def edit
-    @user = User.find(params[:user_id])
     @timesheet = @user.timesheets.find(params[:id])
     
   end
@@ -48,7 +49,6 @@ class TimesheetsController < ApplicationController
   # POST /timesheets
   # POST /timesheets.json
   def create
-    @user = User.find(params[:user_id])
     @timesheet = @user.timesheets.build(params[:timesheet])
     
 
@@ -66,7 +66,6 @@ class TimesheetsController < ApplicationController
   # PUT /timesheets/1
   # PUT /timesheets/1.json
   def update
-    @user = User.find(params[:user_id])
     @timesheet = @user.timesheets.find(params[:id])
 
     respond_to do |format|
@@ -83,7 +82,6 @@ class TimesheetsController < ApplicationController
   # DELETE /timesheets/1
   # DELETE /timesheets/1.json
   def destroy
-    @user = User.find(params[:user_id])
     @timesheet = @user.timesheets.find(params[:id])
     @timesheet.destroy
 
