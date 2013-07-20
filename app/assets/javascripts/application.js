@@ -28,7 +28,7 @@ $(".nicetable").tablecloth({
   customClass: "myTable"
 });
 
-$("table").tablesorter({/* custom tablesorter options */});
+$("table").tablesorter( {sortList: [[0,0], [1,0]]} );
 
 
 

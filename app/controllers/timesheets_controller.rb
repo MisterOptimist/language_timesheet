@@ -8,7 +8,7 @@ class TimesheetsController < ApplicationController
   # GET /timesheets.json
   def index
     @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
-    
+    @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @timesheets }
@@ -67,7 +67,7 @@ class TimesheetsController < ApplicationController
   # PUT /timesheets/1.json
   def update
     @timesheet = @user.timesheets.find(params[:id])
-
+    @hours = @timesheet.hours_studied
     respond_to do |format|
       if @timesheet.update_attributes(params[:timesheet])
         format.html { redirect_to user_timesheet_path(@user, @timesheet), notice: 'Timesheet was successfully updated.' }

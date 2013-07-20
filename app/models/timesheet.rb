@@ -5,4 +5,10 @@ class Timesheet < ActiveRecord::Base
   validates_numericality_of :teacher, :greater_than_or_equal_to => 0.01, :less_than => 10
   validates_numericality_of :study, :greater_than_or_equal_to => 0.01, :less_than => 10
   validates_numericality_of :conversation, :greater_than_or_equal_to => 0.01, :less_than => 10
+
+
+  def hours_studied
+  	teacher + study + conversation
+  end
+
 end
