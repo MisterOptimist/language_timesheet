@@ -1,12 +1,13 @@
 GIT
-  remote: git://github.com/radar/forem-theme-twist.git
-  revision: f08ab243ee695bd5485d589c1177d99d00602150
+  remote: git://github.com/radar/forem-bootstrap.git
+  revision: ed6dca40937b5c73e0ab04c912d27313e945362b
   specs:
-    forem-theme-twist (0.0.1)
+    forem-bootstrap (0.0.1)
+      bootstrap-sass (~> 2.3.2.1)
 
 GIT
   remote: git://github.com/radar/forem.git
-  revision: e1c66aefa60ad496fed71a1a9fdd05a4481f7e5e
+  revision: dd93de69b8206c5b03456b4a4db6adf098eb54c4
   specs:
     forem (1.0.0.beta1)
       cancan (= 1.6.10)
@@ -57,6 +58,8 @@ GEM
       debug_inspector (>= 0.0.1)
     bootstrap-datepicker-rails (1.1.1.1)
       railties (>= 3.0)
+    bootstrap-sass (2.3.2.1)
+      sass (~> 3.2)
     builder (3.0.4)
     cancan (1.6.10)
     coderay (1.0.9)
@@ -200,7 +203,7 @@ DEPENDENCIES
   devise
   figaro
   forem!
-  forem-theme-twist!
+  forem-bootstrap!
   jquery-rails
   jquery-ui-themes
   kaminari
