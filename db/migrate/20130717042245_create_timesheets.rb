@@ -4,7 +4,7 @@ class CreateTimesheets < ActiveRecord::Migration
       t.decimal :teacher
       t.decimal :study
       t.decimal :conversation
-      t.string :day
+      t.date :day
       t.references :user
 
       t.timestamps
