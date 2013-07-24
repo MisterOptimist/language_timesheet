@@ -24,9 +24,11 @@ gem 'kaminari'
 group :production do
 	gem 'pg'
 end
-group :development do
+group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'quiet_assets'
   gem 'sqlite3'
+  gem 'rspec-rails', '~> 2.0'
 end
+
