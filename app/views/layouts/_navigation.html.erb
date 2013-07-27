@@ -1,12 +1,13 @@
+<% if user_signed_in? %>
 <ul class="nav pull-left">
 <li><%= link_to 'Home', main_app.root_path %></li>
 <li><%= link_to 'Statistics', main_app.root_path %></li>
-<li><%= link_to 'Timesheets', main_app.root_path %></li>
+<li><%= link_to 'Timesheets', main_app.user_timesheets_path(current_user, @timesheet) %></li>
 <li><%= link_to 'Forum', main_app.forem_path %></li>
 <li><%= link_to 'Resources', main_app.root_path %></li>
 </ul>
 
-
+<% end %>
 
 
 <ul class="nav pull-right">

@@ -1,4 +1,16 @@
-<div class="hero-unit">
+<% if user_signed_in? %>
+<h1>Average Study Time this week </h1>
+
+
+
+
+
+<% else %>
+<div class="hero-unit text-center">
 <h1>Language Timesheet Tracker</h1>
-It is time to log those hours.
+It is time to log those hours.<br><br>
+<div class="btn btn-large">
+	<%= link_to "Log In", new_user_session_path %>
 </div>
+</div>
+<% end %>

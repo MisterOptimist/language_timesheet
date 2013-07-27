@@ -13,6 +13,7 @@ resources :users do
 end
   
 
+
   authenticated :user do
     root :to => 'home#index'
   end
