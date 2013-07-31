@@ -21,6 +21,8 @@ gem 'jquery-ui-themes'
 gem 'forem', :github => "radar/forem"
 gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'kaminari'
+gem 'morrisjs-rails'
+gem 'raphael-rails'
 group :production do
 	gem 'pg'
 end

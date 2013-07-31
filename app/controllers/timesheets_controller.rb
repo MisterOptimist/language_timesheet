@@ -91,6 +91,17 @@ class TimesheetsController < ApplicationController
     end
   end
 
+   def statistics
+        @timesheets = @user.timesheets.all
+
+        respond_to do |format|
+      format.html # yours.html.erb
+     format.xml  { render json: @user.timesheets }
+    end
+  end
+
+
+
  
 
 end
