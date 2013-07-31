@@ -1,0 +1,48 @@
+<div class="page-header">
+  <h1>Language Timesheet <small><i>from <%= @first %> - <%= @last %></small></i></h1>
+</div>
+
+
+
+
+
+<table class="nicetable table-condensed">  
+<tr>
+    
+    <th>Day of Week</th>
+    <th>Teacher</th>
+    <th>Study</th>
+    <th>Conversation</th>
+    <th>Date</th>
+    <th>Date Posted</th>
+    <th>Actions</th>
+  </tr>
+ </thead>
+  <tbody>
+<% @timesheets.each do |timesheet| %>
+  <tr>
+    
+    <td><%= timesheet.day.strftime("%A") %></td>
+    <td><%= timesheet.teacher %></td>
+    <td><%= timesheet.study %></td>
+    <td><%= timesheet.conversation %></td>
+    <td><%= timesheet.day.strftime("%B %d, %Y") %></td>
+    <td><%= time_ago_in_words(timesheet.created_at) %> ago</td>
+  <td><%= link_to 'Edit', edit_user_timesheet_path(@user, timesheet), :class => "btn btn-mini" %>    <%= link_to 'Delete', [@user, timesheet], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-mini btn-danger" %></td>
+    </tr>
+<% end %>
+</tbody>
+</table>
+ <div class="span4 pull-right" style="text-align:right">
+        <%= paginate @timesheets %>
+      </div>
+    
+<br />
+
+
+
+<%= link_to 'New Timesheet', new_user_timesheet_path, :class => "btn btn-primary" %>
+
+
+
+
