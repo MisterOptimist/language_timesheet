@@ -100,6 +100,17 @@ class TimesheetsController < ApplicationController
     end
   end
 
+ def all
+        @timesheets = @user.timesheets.order('created_at DESC').page(params[:page]).per(7)
+        @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+        @first = @timesheets.first.day.strftime("%B %-d, %Y")
+        @last = @timesheets.last.day.strftime("%B %-d, %Y")
+        respond_to do |format|
+      format.html # yours.html.erb
+     format.xml  { render json: @user.timesheets }
+    end
+  end
+
 
 
  

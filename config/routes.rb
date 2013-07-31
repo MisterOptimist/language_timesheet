@@ -15,6 +15,7 @@ resources :users do
   resources :timesheets do
     collection do
       get 'statistics'
+      get 'all'
     end
   end
 end
