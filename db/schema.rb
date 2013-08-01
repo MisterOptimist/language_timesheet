@@ -123,10 +123,10 @@ ActiveRecord::Schema.define(:version => 20130720073141) do
     t.decimal  "teacher"
     t.decimal  "study"
     t.decimal  "conversation"
-    t.date     "day",          :limit => 255
+    t.date     "day"
     t.integer  "user_id"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   add_index "timesheets", ["user_id"], :name => "index_timesheets_on_user_id"

@@ -23,14 +23,12 @@ gem 'forem-bootstrap', :github => "radar/forem-bootstrap"
 gem 'kaminari'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
-group :production do
-	gem 'pg'
-end
+gem 'groupdate'
+gem 'pg'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'quiet_assets'
-  gem 'sqlite3'
   gem 'rspec-rails', '~> 2.0'
 end
 
