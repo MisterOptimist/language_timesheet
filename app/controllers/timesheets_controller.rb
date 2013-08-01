@@ -101,7 +101,7 @@ class TimesheetsController < ApplicationController
   end
 
  def all
-        @timesheets = @user.timesheets.order('created_at DESC').page(params[:page]).per(7)
+        @timesheets = @user.timesheets.page(params[:page]).per(7)
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
         @first = @timesheets.first.day.strftime("%B %-d, %Y")
         @last = @timesheets.last.day.strftime("%B %-d, %Y")

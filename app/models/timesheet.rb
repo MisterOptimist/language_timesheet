@@ -11,4 +11,5 @@ class Timesheet < ActiveRecord::Base
   	teacher + study + conversation
   end
 
+
 end
