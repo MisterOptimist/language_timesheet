@@ -1,0 +1,19 @@
+<div class="progress progress-striped active">
+<% if @hours == 0 %>
+  <div class="bar" style="width: 0%;">0% Completed</div>
+<% elsif @hours >= 0 and @hours < 2 %>
+  <div class="bar" style="width: 14%;">14% Completed</div>
+  <% elsif @hours >= 2 and @hours < 5 %>
+    <div class="bar" style="width: 28%;">28% Completed</div>
+    <% elsif @hours >= 5 and @hours < 7.5 %>
+    <div class="bar" style="width: 47%;">47% Completed</div>
+     <% elsif @hours >= 7.5 and @hours < 10 %>
+    <div class="bar" style="width: 62%;">62% Completed</div>
+    <% elsif @hours >= 10 and @hours < 12 %>
+    <div class="bar" style="width: 80%;">80% Completed</div>
+    <% elsif @hours >= 12 and @hours < 14.9 %>
+    <div class="bar" style="width: 93%;">93% Completed</div>
+     <% elsif @hours >= 15 %>
+    <div class="bar" style="width: 100%;">100% Completed</div>
+<% end %>
+</div>
