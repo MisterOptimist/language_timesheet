@@ -24,12 +24,16 @@ gem 'kaminari'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'groupdate'
-gem 'pg'
+group :production do
+	gem 'pg'
+end
+
 gem "friendly_id", "~> 4.0.9"
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'quiet_assets'
   gem 'rspec-rails', '~> 2.0'
+  gem 'sqlite3'
 end
 
