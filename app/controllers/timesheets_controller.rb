@@ -101,7 +101,7 @@ class TimesheetsController < ApplicationController
   end
 
  def all
-        @timesheets = @user.timesheets.order('created_at DESC').page(params[:page]).per(7)
+        @timesheets = @user.timesheets.order('created_at DESC').page(params[:page])
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
         @first = @timesheets.first.day.strftime("%B %-d")
         @last = @timesheets.last.day.strftime("%B %-d")
@@ -110,6 +110,19 @@ class TimesheetsController < ApplicationController
      format.xml  { render json: @user.timesheets }
     end
   end
+
+def lastweek
+        @timesheets = @user.timesheets.where(:day => 1.week.ago.beginning_of_week..1.week.ago.end_of_week).page(params[:page]).per(7)
+        @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+        @first = @timesheets.first.day.strftime("%B %-d")
+        @last = @timesheets.last.day.strftime("%B %-d")
+        respond_to do |format|
+      format.html # yours.html.erb
+     format.xml  { render json: @user.timesheets }
+    end
+
+
+end
 
 
 

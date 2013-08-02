@@ -16,6 +16,7 @@ resources :users do
     collection do
       get 'statistics'
       get 'all'
+      get 'lastweek'
     end
   end
 end
