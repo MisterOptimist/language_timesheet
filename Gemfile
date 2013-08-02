@@ -25,6 +25,7 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'groupdate'
 gem 'pg'
+gem "friendly_id", "~> 4.0.9"
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

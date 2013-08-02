@@ -221,6 +221,7 @@ DEPENDENCIES
   figaro
   forem!
   forem-bootstrap!
+  friendly_id (~> 4.0.9)
   groupdate
   jquery-rails
   jquery-ui-themes
