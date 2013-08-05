@@ -1,19 +1,36 @@
 <div class="progress progress-striped active">
 <% if @hours == 0 %>
-  <div class="bar" style="width: 0%;">0% Completed</div>
-<% elsif @hours >= 0 and @hours < 2 %>
-  <div class="bar" style="width: 14%;">14% Completed</div>
-  <% elsif @hours >= 2 and @hours < 5 %>
-    <div class="bar" style="width: 28%;">28% Completed</div>
-    <% elsif @hours >= 5 and @hours < 7.5 %>
-    <div class="bar" style="width: 47%;">47% Completed</div>
-     <% elsif @hours >= 7.5 and @hours < 10 %>
-    <div class="bar" style="width: 62%;">62% Completed</div>
-    <% elsif @hours >= 10 and @hours < 12 %>
-    <div class="bar" style="width: 80%;">80% Completed</div>
-    <% elsif @hours >= 12 and @hours < 14.9 %>
-    <div class="bar" style="width: 93%;">93% Completed</div>
-     <% elsif @hours >= 15 %>
+  <div class="bar" style="width: 0%;"></div>
+<% elsif @hours >= 0 and @hours <= 1 %>
+  <div class="bar" style="width: 5%;">5% Completed</div>
+<% elsif @hours > 1 and @hours <= 2 %>
+  <div class="bar" style="width: 12%;">12% Completed</div>
+<% elsif @hours > 2 and @hours <= 3 %>
+  <div class="bar" style="width: 25%;">25% Completed</div>
+<% elsif @hours > 3 and @hours <= 4 %>
+  <div class="bar" style="width: 30%;">30% Completed</div>
+<% elsif @hours > 4 and @hours <= 5 %>
+  <div class="bar" style="width: 37%;">37% Completed</div>
+<% elsif @hours > 5 and @hours <= 6 %>
+  <div class="bar" style="width: 43%;">43% Completed</div>
+<% elsif @hours > 6 and @hours <= 7 %>
+  <div class="bar" style="width: 49%;">49% Completed</div>
+<% elsif @hours > 7 and @hours <= 8 %>
+  <div class="bar" style="width: 56%;">56% Completed</div>
+<% elsif @hours > 8 and @hours <= 9 %>
+  <div class="bar" style="width: 64%;">64% Completed</div>
+<% elsif @hours > 9 and @hours <= 10 %>
+  <div class="bar" style="width: 73%;">73% Completed</div>
+<% elsif @hours > 10 and @hours <= 11 %>
+  <div class="bar" style="width: 79%;">79% Completed</div>
+<% elsif @hours > 11 and @hours <= 12 %>
+  <div class="bar" style="width: 83%;">83% Completed</div>
+<% elsif @hours > 12 and @hours <= 13 %>
+  <div class="bar" style="width: 88%;">88% Completed</div>
+<% elsif @hours > 13 and @hours <= 14 %>
+  <div class="bar" style="width: 93%;">93% Completed</div>
+<% elsif @hours >= 15 %>
     <div class="bar" style="width: 100%;">100% Completed</div>
+
 <% end %>
 </div>

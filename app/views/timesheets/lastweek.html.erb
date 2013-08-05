@@ -1,14 +1,19 @@
 <div class="page-header">
   <h1>Language Timesheet <small><i><%= @hours %> hours from <%= @last %> - <%= @first %></small></i></h1>
 </div>
-<ul class="nav pull-right nav-pills">
+<div class ="row-fluid">
+<div class="span5"><ul class="nav pull-left nav-pills">
   <li><%= link_to 'This Week', main_app.user_timesheets_path(current_user, @timesheet) %></li>
-     <li class="active"><%= link_to 'Last Week', main_app.lastweek_user_timesheets_path(current_user, @timesheet) %></li>
+    <li class="active"><%= link_to 'Last Week', main_app.lastweek_user_timesheets_path(current_user, @timesheet) %></li>
      <li><%= link_to 'All Weeks', main_app.all_user_timesheets_path(current_user, @timesheet) %></li>
     </ul>
   </li>
 </ul>
-
+</div>
+        <div class="span7"><br>
+<%= render 'timesheets/progressbar' %>
+        </div>
+</div>
 
 
 

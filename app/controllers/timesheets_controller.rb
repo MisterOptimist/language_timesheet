@@ -7,6 +7,7 @@ class TimesheetsController < ApplicationController
   # GET /timesheets
   # GET /timesheets.json
   def index
+   
     @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
     @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
     respond_to do |format|
