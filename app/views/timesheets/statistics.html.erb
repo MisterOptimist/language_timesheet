@@ -1,1 +1,9 @@
-<h1>YOLO</h1>
+<h1>Statistics</h1>
+
+
+<h2>Past 3 Months</h2>
+
+<%= content_tag :div, "", id: "orders_chart", data: {orders: @timesheets} %>
+
+<%= paginate @timesheets %>
+

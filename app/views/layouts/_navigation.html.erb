@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 <ul class="nav pull-left">
 <li><%= link_to 'Home', main_app.root_path %></li>
-<li><%= link_to 'Statistics', main_app.root_path %></li>
+<li><%= link_to 'Statistics', main_app.statistics_user_timesheets_path(current_user, @timesheet) %></li>
 <li class="dropdown">
 <%= link_to 'Timesheets <b class="caret"></b>'.html_safe, main_app.user_timesheets_path(current_user, @timesheet),:data => {:toggle=>"dropdown"}, :class=>"dropdown-toggle"%>
     <ul class="dropdown-menu">

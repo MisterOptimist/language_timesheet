@@ -22,4 +22,11 @@ class Timesheet < ActiveRecord::Base
   where(:day => 1.week.ago.beginning_of_week..1.week.ago.end_of_week)
 end
 
+
+
+
+
+
+
+
 end

@@ -34,8 +34,6 @@ $("table").tablesorter( {sortList: [[0,0], [1,0]]} );
 
 
 
-
-
 $(".datepicker").datepicker({
     altField: "#recorded-at-alt",
     altFormat: "yy-mm-d"

@@ -94,8 +94,8 @@ class TimesheetsController < ApplicationController
   end
 
    def statistics
-        @timesheets = @user.timesheets.all
-
+        @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today - 3.months, Date.today).order('created_at DESC').page(params[:page]).per(90)
+        @users = User.all
         respond_to do |format|
       format.html # yours.html.erb
      format.xml  { render json: @user.timesheets }
@@ -122,9 +122,9 @@ def lastweek
       format.html # yours.html.erb
      format.xml  { render json: @user.timesheets }
     end
-
-
 end
+
+
 
 
 

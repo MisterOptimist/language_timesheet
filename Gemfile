@@ -25,10 +25,7 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'groupdate'
 gem 'public_activity'
-group :production do
-	gem 'pg'
-end
-
+gem 'pg'
 gem "friendly_id", "~> 4.0.9"
 group :development, :test do
   gem 'better_errors'
