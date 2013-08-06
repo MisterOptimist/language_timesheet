@@ -26,7 +26,7 @@ end
 match '/Timesheet', :to => 'timesheets#index'
 
   authenticated :user do
-    root :to => 'home#index'
+    root :to => 'users#index'
   end
-  root :to => "home#index"
+  root :to => "activities#index"
 end
