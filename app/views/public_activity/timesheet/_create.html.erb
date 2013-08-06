@@ -1,0 +1,15 @@
+has submitted a
+<% if activity.trackable %>
+  <%= link_to activity.trackable.user.timesheets.name, [activity.trackable.user, activity.trackable] %> 
+
+
+<div class="timeagowords pull-right">
+
+
+  <%= time_ago_in_words(activity.trackable.created_at) %> ago 
+
+  </div>
+<% else %>
+  Timesheet which has since been removed.
+<% end %>
+

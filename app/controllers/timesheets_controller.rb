@@ -3,7 +3,6 @@ class TimesheetsController < ApplicationController
   load_and_authorize_resource :user
   load_and_authorize_resource :timesheet, :through => :user, :shallow => true
 
-
   # GET /timesheets
   # GET /timesheets.json
   def index
@@ -55,6 +54,7 @@ class TimesheetsController < ApplicationController
 
     respond_to do |format|
       if @timesheet.save
+        @timesheet.create_activity :create, owner: current_user
         format.html { redirect_to user_timesheets_path, notice: 'Timesheet was successfully created.' }
         format.json { render json: @timesheet, status: :created, location: @timesheet }
       else
@@ -71,6 +71,7 @@ class TimesheetsController < ApplicationController
     @hours = @timesheet.hours_studied
     respond_to do |format|
       if @timesheet.update_attributes(params[:timesheet])
+        @timesheet.create_activity :update, owner: current_user
         format.html { redirect_to user_timesheet_path(@user, @timesheet), notice: 'Timesheet was successfully updated.' }
         format.json { head :no_content }
       else

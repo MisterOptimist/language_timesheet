@@ -3,9 +3,9 @@
 </div>
 <div class ="row-fluid">
 <div class="span5"><ul class="nav pull-left nav-pills">
-  <li class="active"><%= link_to 'This Week', main_app.user_timesheets_path(current_user, @timesheet) %></li>
-     <li><%= link_to 'Last Week', main_app.lastweek_user_timesheets_path(current_user, @timesheet) %></li>
-     <li><%= link_to 'All Weeks', main_app.all_user_timesheets_path(current_user, @timesheet) %></li>
+  <li class="active"><%= link_to 'This Week', main_app.user_timesheets_path(@user, @timesheet) %></li>
+     <li><%= link_to 'Last Week', main_app.lastweek_user_timesheets_path(@user, @timesheet) %></li>
+     <li><%= link_to 'All Weeks', main_app.all_user_timesheets_path(@user, @timesheet) %></li>
     </ul>
   </li>
 </ul>

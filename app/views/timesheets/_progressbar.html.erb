@@ -1,6 +1,6 @@
 <div class="progress progress-striped active">
 <% if @hours == 0 %>
-  <div class="bar" style="width: 0%;"></div>
+  <div class="bar" style="width: 0%;">0% Completed</div>
 <% elsif @hours >= 0 and @hours <= 1 %>
   <div class="bar" style="width: 5%;">5% Completed</div>
 <% elsif @hours > 1 and @hours <= 2 %>

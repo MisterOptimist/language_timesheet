@@ -11,6 +11,8 @@ TimesheetApp::Application.routes.draw do
   mount Forem::Engine, :at => '/forums'
 
    devise_for :users
+
+resources :activities
 resources :users do
   resources :timesheets do
     collection do
@@ -20,8 +22,8 @@ resources :users do
     end
   end
 end
-  
 
+match '/Timesheet', :to => 'timesheets#index'
 
   authenticated :user do
     root :to => 'home#index'

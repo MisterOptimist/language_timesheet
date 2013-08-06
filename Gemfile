@@ -24,6 +24,7 @@ gem 'kaminari'
 gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'groupdate'
+gem 'public_activity'
 group :production do
 	gem 'pg'
 end

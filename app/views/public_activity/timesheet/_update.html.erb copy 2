@@ -1,0 +1,7 @@
+updated their
+<% if activity.trackable %>
+  <%= link_to activity.trackable.user.timesheets.name, [activity.trackable.user, activity.trackable] %>
+<% else %>
+  which has since been removed 
+<% end %>
+
