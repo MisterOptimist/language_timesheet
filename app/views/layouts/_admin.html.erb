@@ -4,17 +4,10 @@
 		  <li class="nav-header">Admin Menu</li>        
 
 
-		  <li><a href="index"><i class="icon-home"></i> Dashboard</a></li>
+		  <li><%= link_to '<i class="icon-user"></i> Staff Members'.html_safe, main_app.users_path %></li>
 		  <li><%= link_to '<i class="icon-envelope"></i> Manage Forums'.html_safe, forem.admin_forums_path %></li>
-		<li><%= link_to '<i class="icon-user"></i> Staff Members'.html_safe, main_app.users_path %></li>
-          <li class="divider"></li>
-
-		
-
-
-
-		  <li><a href="#"><i class="icon-comment"></i> Settings</a></li>
-		  <li><a href="#"><i class="icon-share"></i> Logout</a></li>
+		 <li><%= link_to '<i class="icon-comment"></i> Settings'.html_safe, main_app.edit_user_registration_path %></li>
+		  <li><%= link_to '<i class="icon-share"></i> Logout'.html_safe, main_app.destroy_user_session_path, :method => 'delete'%></li>
 		</ul>
 		<% end %>
 		<% end %>

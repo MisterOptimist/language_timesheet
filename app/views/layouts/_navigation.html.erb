@@ -28,8 +28,6 @@
     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, <%= current_user.name %> <b class="caret"></b></a>
      <ul class="dropdown-menu">
         <li><%= link_to '<i class="icon-cog"></i> Preferences'.html_safe, main_app.edit_user_registration_path %></li>
-        <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
-        <li class="divider"></li>
         <li><%= link_to '<i class="icon-off"></i> Logout'.html_safe, main_app.destroy_user_session_path, :method => 'delete'%></li>
       </ul>
 
