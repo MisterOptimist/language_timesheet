@@ -1,4 +1,7 @@
-<h1>Activities#index</h1>
+<div class="page-header">
+  <h1>Recently Logged Hours</h1>
+</div>
+
 <p><% @activities.each do |activity| %>
 
 <div class="activity">
@@ -6,6 +9,6 @@
 	<%= render_activity activity %>
 </div>
 <% end %>
-
-
+<div class="pull-right">
+<%= paginate @activities %></div>
 </p>
