@@ -8,6 +8,8 @@
               <li><%= link_to '<i class="icon-fire"></i> Statistics'.html_safe, main_app.statistics_user_timesheets_path(current_user, @timesheet)  %></li>
               <li class="disabled"><%= link_to '<i class="icon-book"></i> Resources'.html_safe %></li>
               <li><%= link_to '<i class="icon-user"></i> Who\'s Studying?'.html_safe, main_app.activities_path  %></li>
+              <li><%= link_to '<i class="icon-plus-sign"></i> Add A New Timesheet'.html_safe, main_app.new_user_timesheet_path(current_user,@timesheet) %></li>
+
 
             </ul>
             <%= render 'layouts/admin' %>
