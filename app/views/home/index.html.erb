@@ -1,6 +1,13 @@
 <% if user_signed_in? %>
-<h1>Average Study Time this week </h1>
+<div class="page-header">
+<% if @hours == 0 %>
+	  <h1>No Hours Logged Yet!</h1>
+<% else %>
+  <h1>Well You've been busy!<small><i> Logged Hours from All Time</small></i></h1>
+  <% end %>
+</div>
 
+<%= content_tag :div, "", id: "orders_chart", data: {orders: @timesheets} %>
 
 
 
