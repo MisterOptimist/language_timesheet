@@ -9,6 +9,7 @@ class TimesheetsController < ApplicationController
    
     @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
     @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+    @progresshours = @hours * 6.666666.round(2)
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @timesheets }
@@ -116,6 +117,7 @@ class TimesheetsController < ApplicationController
 def lastweek
         @timesheets = @user.timesheets.where(:day => 1.week.ago.beginning_of_week..1.week.ago.end_of_week).page(params[:page]).per(7)
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+        @progresshours = @hours * 6.666666.round(2)
         @first = @timesheets.first.day.strftime("%B %-d")
         @last = @timesheets.last.day.strftime("%B %-d")
         respond_to do |format|
