@@ -1,8 +1,17 @@
 <div class="progress progress-striped active">
-<% if @progresshours < 99.9 %>
-<div class="bar" style="width: <%= @progresshours %>%;"><%= @progresshours %>% Completed</div>
-<% else %>
-<div class="bar" style="width: 100%;"><%= @progresshours %>% Completed</div>
+<% if @user.has_role?(:new_staff) %>
+	<% if @progresshoursnewstaff < 99.9 %>
+		<div class="bar" style="width: <%= @progresshoursnewstaff %>%;"><%= @progresshoursnewstaff %>% Completed</div>
+	<% else %>
+		<div class="bar" style="width: 100%;"><%= @progresshoursnewstaff %>% Completed</div>
+		<% end %>
+
+	<% else %>
+		<% if @progresshours < 99.9 %>
+			<div class="bar" style="width: <%= @progresshours %>%;"><%= @progresshours %>% Completed</div>
+		<% else %>
+			<div class="bar" style="width: 100%;"><%= @progresshours %>% Completed</div>
+	<% end %>
 <% end %>
 </div>
 

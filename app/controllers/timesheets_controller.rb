@@ -9,7 +9,8 @@ class TimesheetsController < ApplicationController
    
     @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
     @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
-    @progresshours = @hours * 6.666666.round(2)
+    @progresshours = @hours * 10
+    @progresshoursnewstaff = @hours * 6.666666.round(2) 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @timesheets }
