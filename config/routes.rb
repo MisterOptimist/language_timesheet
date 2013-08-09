@@ -23,8 +23,7 @@ resources :users do
   end
 end
 
-match '/Timesheet', :to => 'timesheets#index'
-
+root :to => 'home#index'
   authenticated :user do
     root :to => 'home#index'
   end

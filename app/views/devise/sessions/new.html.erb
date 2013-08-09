@@ -1,11 +1,35 @@
-<div class="container">
-<h2>Sign in</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+ <div class="" id="loginModal">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3>Have an Account?</h3>
+          </div>
+          <div class="modal-body">
+            <div class="well">
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#login" data-toggle="tab">Login</a></li>
+                <li><a href="#create" data-toggle="tab">Create Account</a></li>
+              </ul>
+              <div id="myTabContent" class="tab-content">
+                <div class="tab-pane active in" id="login">
+                  <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
   <%= f.input :email, :autofocus => true %>
   <%= f.input :password %>
   <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
   <%= f.button :submit, "Sign in", :class => 'btn-primary' %>
 <% end %>
-<%= render "devise/shared/links" %>
-</div>
-</div>
+
+                </div>
+                <div class="tab-pane fade" id="create">
+                  <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+						  <%= f.error_notification %>
+						  <%= display_base_errors resource %>
+						  <%= f.input :name, :autofocus => true %>
+						  <%= f.input :email, :required => true %>
+						  <%= f.input :password, :required => true %>
+						  <%= f.input :password_confirmation, :required => true %>
+						  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+						<% end %>
+                </div>
+            </div>
+          </div>
+        </div>
