@@ -17,10 +17,12 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
 
+ #When user signs up, automatically assigns them as Staff
   def assign_default_role
     add_role(:staff) if self.roles.blank?
   end
 
+  #Required for Forem
   def to_s
   name
   end

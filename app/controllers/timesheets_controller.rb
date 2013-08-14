@@ -6,10 +6,13 @@ class TimesheetsController < ApplicationController
   # GET /timesheets
   # GET /timesheets.json
   def index
-   
+    #User Timesheets for just that current week
     @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
+    #Hour calculator
     @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+    #Progress bar for Staff
     @progresshours = @hours * 10
+    #Progress bar for New Staff
     @progresshoursnewstaff = @hours * 6.666666.round(2) 
     respond_to do |format|
       format.html # index.html.erb
@@ -70,6 +73,7 @@ class TimesheetsController < ApplicationController
   # PUT /timesheets/1.json
   def update
     @timesheet = @user.timesheets.find(params[:id])
+    #Hour Calculator
     @hours = @timesheet.hours_studied
     respond_to do |format|
       if @timesheet.update_attributes(params[:timesheet])
@@ -96,6 +100,7 @@ class TimesheetsController < ApplicationController
   end
 
    def statistics
+        #User Timesheets for past 3 months(this is for the graph)
         @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today - 3.months, Date.today).order('created_at DESC').page(params[:page]).per(90)
         @users = User.all
         respond_to do |format|
@@ -105,9 +110,13 @@ class TimesheetsController < ApplicationController
   end
 
  def all
+        #View all timesheets created forever
         @timesheets = @user.timesheets.order('created_at DESC').page(params[:page])
+        #Hour calculator
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+        #Grabs the first date with timesheets
         @first = @timesheets.first.day.strftime("%B %-d")
+        #Grabs the last date with timesheets
         @last = @timesheets.last.day.strftime("%B %-d")
         respond_to do |format|
       format.html # yours.html.erb
@@ -116,10 +125,17 @@ class TimesheetsController < ApplicationController
   end
 
 def lastweek
+        #View timesheets from last week only
         @timesheets = @user.timesheets.where(:day => 1.week.ago.beginning_of_week..1.week.ago.end_of_week).page(params[:page]).per(7)
+        #Hour calculator
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
+        #Progress bar for Staff
         @progresshours = @hours * 6.666666.round(2)
+        #Progress bar for New Staff
+        @progresshoursnewstaff = @hours * 6.666666.round(2) 
+        #Grabs the first date with timesheets
         @first = @timesheets.first.day.strftime("%B %-d")
+        #Grabs the last date with timesheets
         @last = @timesheets.last.day.strftime("%B %-d")
         respond_to do |format|
       format.html # yours.html.erb
