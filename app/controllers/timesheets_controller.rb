@@ -130,7 +130,7 @@ def lastweek
         #Hour calculator
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
         #Progress bar for Staff
-        @progresshours = @hours * 6.666666.round(2)
+        @progresshours = @hours * 10
         #Progress bar for New Staff
         @progresshoursnewstaff = @hours * 6.666666.round(2) 
         #Grabs the first date with timesheets
