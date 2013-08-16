@@ -15,6 +15,16 @@
   <%= @word.rndm %>
 </p>
 
+<p>
+  <b>Khmer Sentence</b>
+  <%= @word.khmersentence%>
+</p>
+
+<p>
+  <b>English Sentence</b>
+  <%= @word.englishsentence%>
+</p>
+
 
 <%= link_to 'Edit', edit_word_path(@word) %> |
 <%= link_to 'Back', words_path %>

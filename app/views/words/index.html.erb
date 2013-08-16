@@ -5,8 +5,8 @@
     <th>Khmer</th>
     <th>English</th>
     <th>Date Shown</th>
-    <th></th>
-    <th></th>
+    <th>Khmer Sentence</th>
+    <th>English Sentence</th>
     <th></th>
   </tr>
 
@@ -15,6 +15,8 @@
     <td><%= word.khmer %></td>
     <td><%= word.english %></td>
     <td><%= word.rndm %></td>
+    <td><%= word.khmersentence %></td>
+    <td><%= word.englishsentence %></td>
     <td><%= link_to 'Show', word %></td>
     <td><%= link_to 'Edit', edit_word_path(word) %></td>
     <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
