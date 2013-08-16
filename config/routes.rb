@@ -3,6 +3,9 @@ TimesheetApp::Application.routes.draw do
 
 
 
+  resources :words
+
+
   get "resources/khmerfont"
 
   get "resources/anki"

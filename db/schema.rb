@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805051252) do
+ActiveRecord::Schema.define(:version => 20130816034221) do
 
   create_table "activities", :force => true do |t|
     t.integer  "trackable_id"
@@ -178,5 +178,13 @@ ActiveRecord::Schema.define(:version => 20130805051252) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "words", :force => true do |t|
+    t.string   "khmer"
+    t.string   "english"
+    t.date     "rndm"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end

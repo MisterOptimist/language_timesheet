@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Khmer:</b>
+  <%= @word.khmer %>
+</p>
+
+<p>
+  <b>English:</b>
+  <%= @word.english %>
+</p>
+
+<p>
+  <b>Rndm:</b>
+  <%= @word.rndm %>
+</p>
+
+
+<%= link_to 'Edit', edit_word_path(@word) %> |
+<%= link_to 'Back', words_path %>
