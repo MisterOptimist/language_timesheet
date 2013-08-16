@@ -1,17 +1,18 @@
 <% if user_signed_in? %>
 	<div class="page-header">
-	 <h1>Word of the day <small><i><%= Date.today.strftime("%B %-d, %Y")%></i></small></h1>
+	 <h1>Word of the day <small><i><%= Date.today.strftime("%A - %B %-d, %Y")%></i></small></h1>
 	 <small><i></small></i></h1>
 	</div>
 
 
-<h3><div class="span6 text-center pull-left"><%= @khmer %> </div></h3>
-<h3><div class="span6 text-center pull-right"><%= @english %></div></h3>
+<h3><div class="span3 offset2 text-center word"><%= @khmer %> </div></h3>
+<h3><div class="span3 offset2 text-center word"><%= @english %></div></h3>
 
 <div class="span12">
 <div id="sentences">
-<p><b>Khmer Sentence:</b> <%= @khmersentence %></p>
-<p><b>English Translation:</b> <%= @englishsentence %></p>
+
+<li><h3> <%= @khmersentence %></h3></li>
+<li><h4><%= @englishsentence %></h4></li>
 </div>
 </div>
 
