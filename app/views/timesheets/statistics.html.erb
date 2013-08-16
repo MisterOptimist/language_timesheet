@@ -1,9 +1,19 @@
-<h1>Statistics</h1>
-
-
-<h2>Past 3 Months</h2>
-
-<%= content_tag :div, "", id: "orders_chart", data: {orders: @timesheets} %>
-
-<%= paginate @timesheets %>
-
+<div class="page-header"><h1>Statistics</h1></div>
+<div class="tabbable"> <!-- Only required for left/right tabs -->
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#tab1" data-toggle="tab">Past 3 Months</a></li>
+    <li><a href="#tab2" data-toggle="tab">All Time</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+		<%= content_tag :div, "", id: "orders_chart", data: {orders: @timesheets} %>
+		<%= paginate @timesheets %>
+    </div>
+    <div class="tab-pane" id="tab2">
+    <p><h3>All Time</h3>
+      
+    </div>
+    
+    </div>
+  </div>
+</div>

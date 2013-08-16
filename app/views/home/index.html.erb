@@ -1,25 +1,19 @@
 <% if user_signed_in? %>
-<div class="page-header">
-<% if @hours == 0 %>
-	  <h1>No Hours Logged Yet!</h1>
-<% else %>
-WORD OF THE DAY.
-<%= @khmer %> and <%= @english %>
-  <h1>Well You've been busy!<small><i><%= @hours %> Hours Logged from all time</small></i></h1>
-  <% end %>
-</div>
+	<div class="page-header">
+		<h1>Word <i>of the</i> Day
+	</div>
 
-<%= content_tag :div, "", id: "orders_chart", data: {orders: @timesheets} %>
+<h2><%= @khmer %> </h2><%= @english %>
 
 
 
 
 <% else %>
-<div class="hero-unit text-center">
-<h1>Language Timesheet Tracker</h1>
-It is time to log those hours.<br><br>
-<div class="btn btn-large">
-	<%= link_to "Log In", new_user_session_path %>
-</div>
-</div>
+	<div class="hero-unit text-center">
+		<h1>Language Timesheet Tracker</h1>
+			It is time to log those hours.<br><br>
+				<div class="btn btn-large">
+					<%= link_to "Log In", new_user_session_path %>
+				</div>
+	</div>
 <% end %>
