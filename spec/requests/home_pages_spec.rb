@@ -4,9 +4,9 @@ describe "Home Page" do
   describe "GET /" do
     it "should contain all the proper links" do
       get root_path
-      click_button "Timesheets"
+      visit "Timesheets"
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(@user, timesheets)
     end
   end
 end

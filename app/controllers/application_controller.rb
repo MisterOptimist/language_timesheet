@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
 	include PublicActivity::StoreController
-	before_filter :authenticate_user!
   def forem_user
     current_user
   end
