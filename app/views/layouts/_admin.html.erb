@@ -6,6 +6,8 @@
 
 		  <li><%= link_to '<i class="icon-user"></i> Staff Members'.html_safe, main_app.users_path %></li>
 		  <li><%= link_to '<i class="icon-envelope"></i> Manage Forums'.html_safe, forem.admin_forums_path %></li>
+		  <li><%= link_to '<i class="icon-font"></i> Manage Word of the Day'.html_safe, main_app.words_path %></li>
+
 		 <li><%= link_to '<i class="icon-comment"></i> Settings'.html_safe, main_app.edit_user_registration_path %></li>
 		  <li><%= link_to '<i class="icon-share"></i> Logout'.html_safe, main_app.destroy_user_session_path, :method => 'delete'%></li>
 		</ul>
