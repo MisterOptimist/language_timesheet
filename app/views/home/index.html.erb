@@ -1,10 +1,19 @@
 <% if user_signed_in? %>
 	<div class="page-header">
-		<h1>Word <i>of the</i> Day
+	 <h1>Word of the day <small><i><%= Date.today.strftime("%B %-d, %Y")%></i></small></h1>
+	 <small><i></small></i></h1>
 	</div>
 
-<h2><%= @khmer %> </h2><%= @english %>
 
+<h3><div class="span6 text-center pull-left"><%= @khmer %> </div></h3>
+<h3><div class="span6 text-center pull-right"><%= @english %></div></h3>
+
+<div class="span12">
+<div id="sentences">
+<p>Example Sentence: <%= @khmersentence %></p>
+<p>Translated: <%= @englishsentence %></p>
+</div>
+</div>
 
 
 

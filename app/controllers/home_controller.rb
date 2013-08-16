@@ -9,7 +9,8 @@ class HomeController < ApplicationController
 @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
 @khmer = Word.random.khmer
 @english = Word.random.english
-@name = current_user.name
+@khmersentence = Word.random.khmersentence
+@englishsentence = Word.random.englishsentence
  end
 
  
