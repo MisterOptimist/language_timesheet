@@ -1,4 +1,4 @@
-<h1>Listing words</h1>
+<div class="page-header"><h1>Listing words</h1></div>
 
 <table class="nicetable table-condensed">
   <tr>
@@ -7,6 +7,8 @@
     <th>Date Shown</th>
     <th>Khmer Sentence</th>
     <th>English Sentence</th>
+    <th></th>
+    <th></th>
     <th></th>
   </tr>
 
@@ -26,4 +28,4 @@
 
 <br />
 
-<%= link_to 'New Word', new_word_path %>
+<%= link_to 'Add New Word', new_word_path, class: "btn btn-success" %>
