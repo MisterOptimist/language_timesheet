@@ -7,7 +7,7 @@ class TimesheetsController < ApplicationController
   # GET /timesheets.json
   def index
     #User Timesheets for just that current week
-    @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week(:sunday), Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
+    @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week, Date.today.end_of_week).order('created_at DESC').page(params[:page]).per(7)
     #Hour calculator
     @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
     #Progress bar for Staff

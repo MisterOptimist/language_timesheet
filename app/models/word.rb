@@ -4,7 +4,7 @@ class Word < ActiveRecord::Base
     rndm = find_by_rndm Date.today
     unless rndm
       update_all :rndm => nil
-      rndm = self.order('rand()').first
+      rndm = self.order('random()').first
       rndm.update_attribute :rndm, Date.today
     end
     rndm
