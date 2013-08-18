@@ -126,7 +126,8 @@ class TimesheetsController < ApplicationController
 
 def lastweek
         #View timesheets from last week only
-        @timesheets = @user.timesheets.where(:day => 1.week.ago.beginning_of_week..1.week.ago.end_of_week).page(params[:page]).per(7)
+        @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', 1.week.ago.beginning_of_week, 1.week.ago.end_of_week).order('created_at DESC').page(params[:page]).per(7)
+
         #Hour calculator
         @hours = @timesheets.sum{|p| p.teacher + p.conversation + p.study}
         #Progress bar for Staff
