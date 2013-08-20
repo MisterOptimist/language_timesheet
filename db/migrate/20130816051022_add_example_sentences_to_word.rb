@@ -8,3 +8,4 @@ class AddExampleSentencesToWord < ActiveRecord::Migration
   	remove_column :words, :khmersentence
   	remove_column :words, :englishsentence
 end
+end
