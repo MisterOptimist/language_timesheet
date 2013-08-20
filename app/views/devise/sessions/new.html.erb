@@ -27,6 +27,8 @@
 						  <%= f.input :email, :required => true %>
 						  <%= f.input :password, :required => true %>
 						  <%= f.input :password_confirmation, :required => true %>
+              <%= f.input :joined_staff, :required => true, :as => :string, :input_html => { :class => 'datepicker'} %>
+              <%= f.input :joined_staff, :as => :hidden, :input_html => { :id => 'recorded-at-alt'} %>
 						  <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 						<% end %>
                 </div>
