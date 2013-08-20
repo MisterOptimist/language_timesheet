@@ -7,7 +7,10 @@
   <%= f.input :password, :autocomplete => "off", :hint => "leave it blank if you don't want to change it", :required => false %>
   <%= f.input :password_confirmation, :required => false %>
   <%= f.input :current_password, :hint => "we need your current password to confirm your changes", :required => true %>
-  <%= f.button :submit, 'Update', :class => 'btn-primary' %>
+  <%= f.input :joined_staff, :required => true, :as => :string, :input_html => { :class => 'datepicker'} %>
+  <%= f.input :joined_staff, :as => :hidden, :input_html => { :id => 'recorded-at-alt'} %>
+   <p>Please input the date you joined staff.</p>
+	<%= f.button :submit, 'Update', :class => 'btn-primary' %>
 <% end %>
 <h3>Cancel my account</h3>
 <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
