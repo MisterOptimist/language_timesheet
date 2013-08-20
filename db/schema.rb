@@ -187,7 +187,6 @@ ActiveRecord::Schema.define(:version => 0) do
     t.datetime "updated_at",      :null => false
     t.text     "khmersentence"
     t.text     "englishsentence"
-    t.text     "phonetic"
   end
 
 end
