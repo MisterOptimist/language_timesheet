@@ -1,5 +1,7 @@
 class Word < ActiveRecord::Base
   attr_accessible :english, :khmer, :rndm, :khmersentence, :englishsentence, :phonetic
+  
+
    def self.random
     rndm = find_by_rndm Date.today
     unless rndm

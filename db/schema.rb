@@ -30,14 +30,6 @@ ActiveRecord::Schema.define(:version => 20130820044604) do
   add_index "activities", ["recipient_id", "recipient_type"], :name => "index_activities_on_recipient_id_and_recipient_type"
   add_index "activities", ["trackable_id", "trackable_type"], :name => "index_activities_on_trackable_id_and_trackable_type"
 
-  create_table "categories", :force => true do |t|
-    t.string   "title"
-    t.boolean  "state",      :default => true
-    t.integer  "position",   :default => 0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
-  end
-
   create_table "forem_categories", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at", :null => false
@@ -133,27 +125,6 @@ ActiveRecord::Schema.define(:version => 20130820044604) do
   add_index "forem_views", ["user_id"], :name => "index_forem_views_on_user_id"
   add_index "forem_views", ["viewable_id"], :name => "index_forem_views_on_topic_id"
 
-  create_table "forums", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.boolean  "state",        :default => true
-    t.integer  "topics_count", :default => 0
-    t.integer  "posts_count",  :default => 0
-    t.integer  "position",     :default => 0
-    t.integer  "category_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
-  create_table "posts", :force => true do |t|
-    t.text     "body"
-    t.integer  "forum_id"
-    t.integer  "topic_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -177,18 +148,6 @@ ActiveRecord::Schema.define(:version => 20130820044604) do
 
   add_index "timesheets", ["user_id"], :name => "index_timesheets_on_user_id"
 
-  create_table "topics", :force => true do |t|
-    t.string   "title"
-    t.integer  "hits",        :default => 0
-    t.boolean  "sticky",      :default => false
-    t.boolean  "locked",      :default => false
-    t.integer  "posts_count"
-    t.integer  "forum_id"
-    t.integer  "user_id"
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
-  end
-
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "",               :null => false
     t.string   "encrypted_password",     :default => "",               :null => false
@@ -207,8 +166,6 @@ ActiveRecord::Schema.define(:version => 20130820044604) do
     t.string   "forem_state",            :default => "pending_review"
     t.boolean  "forem_auto_subscribe",   :default => false
     t.string   "slug"
-    t.integer  "topics_count",           :default => 0
-    t.integer  "posts_count",            :default => 0
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
