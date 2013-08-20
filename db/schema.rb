@@ -230,7 +230,7 @@ ActiveRecord::Schema.define(:version => 20130820030834) do
     t.datetime "updated_at",      :null => false
     t.text     "khmersentence"
     t.text     "englishsentence"
-    t.text     "phonetics"
+    t.text     "phonetic"
   end
 
 end
