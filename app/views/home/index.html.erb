@@ -12,8 +12,9 @@
 <div class="span12">
 <div id="sentences">
 
-<li><h3> <%= @khmersentence %></h3></li>
-<li><h4><%= @englishsentence %></h4></li>
+<li><h4>Khmer Sentence: <%= @khmersentence %></h4></li>
+<% if @phonetics != nil%><li><h4>Phonetics: <%= @phonetics %></h4></li><% end %>
+<li><h4>English Translation: <%= @englishsentence %></h4></li>
 </div>
 </div>
 
