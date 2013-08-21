@@ -10,7 +10,13 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @timesheets = @user.timesheets.all
+    @joinedstaff = @user.joined_staff.strftime("%B %-d, %Y")
     
+  end
+
+  def hours
+    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+    @users = User.all
   end
   
   def update

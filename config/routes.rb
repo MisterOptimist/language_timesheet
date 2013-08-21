@@ -23,6 +23,9 @@ TimesheetApp::Application.routes.draw do
 
 resources :activities
 resources :users do
+  collection do
+    get 'hours'
+  end
   resources :timesheets do
     collection do
       get 'statistics'

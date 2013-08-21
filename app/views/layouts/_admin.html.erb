@@ -3,7 +3,7 @@
 <ul class="nav nav-list"> 
 		  <li class="nav-header">Admin Menu</li>        
 
-
+		  <li><%= link_to '<i class="icon-list-alt"></i> Check Hours'.html_safe, main_app.hours_users_path %></li>
 		  <li><%= link_to '<i class="icon-user"></i> Staff Members'.html_safe, main_app.users_path %></li>
 		  <li><%= link_to '<i class="icon-envelope"></i> Manage Forums'.html_safe, forem.admin_forums_path %></li>
 		  <li><%= link_to '<i class="icon-font"></i> Manage Word of the Day'.html_safe, main_app.words_path %></li>
