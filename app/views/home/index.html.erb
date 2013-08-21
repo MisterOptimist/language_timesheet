@@ -1,13 +1,15 @@
 <% if user_signed_in? %>
 	<div class="page-header">
-	 <h1>Word of The Day
+	 <h1>Welcome back, <i><%= @name %>!</i>
 	 <small><i>Here is your word of the day.</i></small></h1>
 	 <small><i></small></i></h1>
 	</div>
 
 
-<h3><div class="span3 offset2 text-center word"><%= @khmer %> </div></h3>
-<h3><div class="span3 offset2 text-center word"><%= @english %></div></h3>
+<h3><div class="span3 offset1 text-center word"><%= @khmer %> </div></h3>
+<h3><div class="span3 offset1 text-center word"><%= @english %></div></h3>
+<h3><div class="span3 offset1 text-center word"><%= @english %></div></h3>
+
 
 <div class="span12">
 <div id="sentences">
