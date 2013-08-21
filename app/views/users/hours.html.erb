@@ -13,10 +13,10 @@
   </thead>
   <tbody>
   <% @users.each do |user| %>
-    <tr class="<%= 'success' if user.has_role? :staff and user.add_hours >= 10 %><%= 'warning' if user.has_role? :staff and user.add_hours < 10 and user.add_hours > 6 %><%= 'error' if user.has_role? :staff and user.add_hours >= 0 and user.add_hours <= 6 %><%= 'success' if user.has_role? :new_staff and user.add_hours >= 15 %><%= 'warning' if user.has_role? :new_staff and user.add_hours < 15 and user.add_hours >= 12 %><%= 'error' if user.has_role? :new_staff and user.add_hours < 12 and user.add_hours >= 0 %>">
+    <tr class="<%= user.progress_status.to_s %>">
       <td><%= user.name%></td>
       <td><%= user.email %></td>
-      <td><%= user.add_hours %></td>
+      <td><%= user.total_hours %></td>
       <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
       <td>
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>

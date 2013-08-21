@@ -28,9 +28,31 @@ end
   name
   end
 
- def add_hours
-  self.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week, Date.today.end_of_week).order('created_at DESC').sum{|p| p.teacher + p.conversation + p.study}
+  def total_hours                                                                    
+  @total_hours ||= timesheets                                                   
+    .where('day BETWEEN ? AND ?', Date.today.beginning_of_week, Date.today.end_of_week)
+    .sum {|p| p.teacher + p.conversation + p.study}                             
+end                                                                             
 
- end
+def progress_status                                                             
+  if has_role? :staff                                                           
+    if total_hours >= 10                                                           
+      :success                                                                     
+    elsif (7..9).include? total_hours                                           
+      :warning                                                                     
+    else                                                                           
+      :error                                                                       
+    end                                                                                                                                         
+  elsif has_role? :new_staff                                                       
+    if total_hours >= 15                                                           
+      :success                                                                     
+    elsif (12..14).include? total_hours                                            
+      :warning                                                                     
+    else                                                                           
+      :error
+    end
+  end
+end
+
   
 end
