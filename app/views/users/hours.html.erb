@@ -8,13 +8,13 @@
       <th>Total Hours</th>
       <th>Role</th>
       <th>Change Role</th>
-      <th>Delete</th>
+      <th>Timesheet</th>
     </tr>
   </thead>
   <tbody>
   <% @users.each do |user| %>
-    <tr>
-      <td><%= link_to user.name, user_timesheets_path(user, @timesheets) %></td>
+    <tr class="<%= 'success' if user.has_role? :staff and user.add_hours >= 10 %><%= 'warning' if user.has_role? :staff and user.add_hours < 10 and user.add_hours > 6 %><%= 'error' if user.has_role? :staff and user.add_hours > 0 and user.add_hours <= 6 %><%= 'success' if user.has_role? :new_staff and user.add_hours >= 15 %><%= 'warning' if user.has_role? :new_staff and user.add_hours < 15 and user.add_hours >= 12 %><%= 'error' if user.has_role? :new_staff and user.add_hours < 12 and user.add_hours >= 0 %>">
+      <td><%= user.name%></td>
       <td><%= user.email %></td>
       <td><%= user.add_hours %></td>
       <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
@@ -22,8 +22,14 @@
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
         <%= render user %>
       </td>
-      <td><%= link_to("Delete user", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-mini btn-danger') unless user == current_user %></td>
+      <td><%= link_to 'Timesheet', user_timesheets_path(user, @timesheets), class: "btn btn-mini" %>
     </tr>
+
+
+
+
+
+
   <% end %>
   </tbody>
 </table>
