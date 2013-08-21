@@ -2,28 +2,26 @@
 
 <table class="nicetable table-condensed">
   <tr>
+    <th>Date Shown</th>
     <th>Khmer</th>
     <th>English</th>
-    <th>Date Shown</th>
+    <th>Phonetic</th>
     <th>Khmer Sentence</th>
-    <th>Phonetics</th>
+    <th>Phonetic Sentence</th>
     <th>English Sentence</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th>Actions</th>
   </tr>
 
 <% @words.each do |word| %>
   <tr>
+    <td><%= word.rndm %></td>
     <td><%= word.khmer %></td>
     <td><%= word.english %></td>
-    <td><%= word.rndm %></td>
+    <td><%= word.english_phonetic %></td>
     <td><%= word.khmersentence %></td>
-     <td><%= word.phonetic %></td>
+    <td><%= word.phonetic %></td>
     <td><%= word.englishsentence %></td>
-    <td><%= link_to 'Show', word %></td>
-    <td><%= link_to 'Edit', edit_word_path(word) %></td>
-    <td><%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_word_path(word), class: "btn btn-mini" %> <%= link_to 'Destroy', word, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-mini" %></td>
   </tr>
 <% end %>
 </table>

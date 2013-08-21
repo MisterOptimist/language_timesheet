@@ -3,10 +3,11 @@
 
   <div class="form-inputs">
     <%= f.input :khmer %>
+    <%= f.input :english_phonetic, label: "English Phonetic" %>
     <%= f.input :english %>
-    <%= f.input :khmersentence %>
-    <%= f.input :phonetic %>
-    <%= f.input :englishsentence %>
+    <%= f.input :khmersentence, label: "Khmer Sentence" %>
+    <%= f.input :phonetic,label: "Phonetic Sentence" %>
+    <%= f.input :englishsentence, label: "English Sentence" %>
   </div>
 
   <div class="form-actions">

@@ -12,6 +12,7 @@ class HomeController < ApplicationController
 @khmersentence = Word.random.khmersentence
 @englishsentence = Word.random.englishsentence
 @phonetic = Word.random.phonetic
+@english_phonetic = Word.random.english_phonetic
 @name = current_user
  end
 

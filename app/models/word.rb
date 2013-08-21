@@ -1,5 +1,5 @@
 class Word < ActiveRecord::Base
-  attr_accessible :english, :khmer, :rndm, :khmersentence, :englishsentence, :phonetic
+  attr_accessible :english, :khmer, :rndm, :khmersentence, :englishsentence, :phonetic, :english_phonetic
   
 
    def self.random
