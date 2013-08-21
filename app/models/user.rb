@@ -19,8 +19,9 @@ class User < ActiveRecord::Base
 
  #When user signs up, automatically assigns them as Staff
   def assign_default_role
-    add_role(:staff) if self.roles.blank?
-  end
+    add_role(:new_staff) if self.roles.blank? && self.joined_staff.to_date > 1.year.ago.to_date
+    add_role(:staff) if self.roles.blank? && self.joined_staff.to_date > 1.year.ago.to_date
+end
 
   #Required for Forem
   def to_s
