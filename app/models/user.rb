@@ -28,6 +28,9 @@ end
   name
   end
 
- 
+ def add_hours
+  self.timesheets.where('day BETWEEN ? AND ?', Date.today.beginning_of_week, Date.today.end_of_week).order('created_at DESC').sum{|p| p.teacher + p.conversation + p.study}
+
+ end
   
 end

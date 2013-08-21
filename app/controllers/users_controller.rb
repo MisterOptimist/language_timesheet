@@ -15,7 +15,8 @@ class UsersController < ApplicationController
   end
 
   def hours
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+
+   authorize! :index, @user, :message => 'Not authorized as an administrator.'
     @users = User.all
   end
   

@@ -1,11 +1,11 @@
-<h3>Users</h3>
+<h3>Weekly Timesheets</h3>
 
 <table class="nicetable table-condensed">
   <thead>
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Joined Staff</th>
+      <th>Total Hours</th>
       <th>Role</th>
       <th>Change Role</th>
       <th>Delete</th>
@@ -16,7 +16,7 @@
     <tr>
       <td><%= link_to user.name, user_timesheets_path(user, @timesheets) %></td>
       <td><%= user.email %></td>
-      <td><%= user.joined_staff.to_date %></td>
+      <td><%= user.add_hours %></td>
       <td><%= user.roles.first.name.titleize unless user.roles.first.nil? %></td>
       <td>
         <a data-toggle="modal" href="#role-options-<%= user.id %>" class="btn btn-mini" type="button">Change role</a>
