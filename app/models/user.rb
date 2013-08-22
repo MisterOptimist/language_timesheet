@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   friendly_id :name, use: :slugged
   
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :role_ids, :as => :admin
@@ -54,5 +54,10 @@ def progress_status
   end
 end
 
+
+  protected
+    def confirmation_required?
+      false
+      end
   
 end

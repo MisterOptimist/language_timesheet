@@ -28,6 +28,7 @@ gem 'public_activity'
 gem 'pg'
 gem "friendly_id", "~> 4.0.9"
 gem 'seed_dump'
+gem 'figaro'
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]

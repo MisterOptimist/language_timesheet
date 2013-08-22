@@ -20,6 +20,22 @@ TimesheetApp::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+
+
+
+        config.action_mailer.default_url_options = { :host => 'http://bblanguageteam.com' }
+
+        config.action_mailer.delivery_method = :smtp 
+
+        config.action_mailer.smtp_settings = {
+        address: "smtp.gmail.com",
+        port: 587,
+        domain: ENV["GMAIL_DOMAIN"],
+        authentication: "plain",
+        enable_starttls_auto: true,
+        user_name: ENV["GMAIL_USERNAME"],
+        password: ENV["GMAIL_PASSWORD"]
+}
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
