@@ -92,13 +92,14 @@ class TimesheetsController < ApplicationController
   def destroy
     @timesheet = @user.timesheets.find(params[:id])
     @timesheet.destroy
-
+    if @timesheet.update_attributes(params[:timesheet])
+        @timesheet.create_activity :destroy, owner: current_user
     respond_to do |format|
       format.html { redirect_to user_timesheets_path }
       format.json { head :no_content }
     end
   end
-
+end
    def statistics
         #User Timesheets for past 3 months(this is for the graph)
         @timesheets = @user.timesheets.where('day BETWEEN ? AND ?', Date.today - 3.months, Date.today).order('created_at DESC').page(params[:page]).per(90)
