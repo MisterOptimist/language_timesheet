@@ -32,13 +32,15 @@ end
   def to_s
   name
   end
-
+  
+#Calculates the total hours a person has studied from 3 different columns and adds them together.
   def total_hours                                                                    
   @total_hours ||= timesheets                                                   
     .where('day BETWEEN ? AND ?', Date.today.beginning_of_week, Date.today.end_of_week)
     .sum {|p| p.teacher + p.conversation + p.study}                             
-end                                                                             
+  end                                                                             
 
+#Checks the progress of the user and outputs different colored tables for admin use
 def progress_status                                                             
   if has_role? :staff                                                           
     if total_hours >= 10                                                           
@@ -59,7 +61,7 @@ def progress_status
   end
 end
 
-
+#Set this so users won't have to confirm their email when sigining up.
   protected
     def confirmation_required?
       false
