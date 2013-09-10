@@ -20,4 +20,10 @@ describe User do
 		user = FactoryGirl.build(:user, joined_staff: nil)
 		expect(user).to have(1).errors_on(:joined_staff)
 	end
+
+	it "is invalid with a duplicate email address" do 
+		user = FactoryGirl.build(:user, email: "hello@gmail.com")
+		FactoryGirl.create(:user, email: "hello@gmail.com")
+		expect(user).to have(1).errors_on(:email)
+	end
 end
