@@ -37,6 +37,7 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails', '~> 2.0'
   gem 'sqlite3'
+  gem 'factory_girl_rails'
   gem "faker", "~> 1.1.2"
   gem "capybara", "~> 2.1.0"
   gem "database_cleaner", "~> 1.0.1"
