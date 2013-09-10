@@ -24,5 +24,6 @@ describe User do
 		expect(user).to have(1).errors_on(:email)
 	end
 
+	
 
 end
