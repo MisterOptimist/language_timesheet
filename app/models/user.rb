@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me, :joined_staff
 
 
+
  #When user signs up, automatically assigns them as Staff
   def assign_default_role
     if self.roles.blank?

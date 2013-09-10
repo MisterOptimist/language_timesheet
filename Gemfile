@@ -29,11 +29,19 @@ gem 'pg'
 gem "friendly_id", "~> 4.0.9"
 gem 'seed_dump'
 gem 'figaro'
+
+
 group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'quiet_assets'
   gem 'rspec-rails', '~> 2.0'
   gem 'sqlite3'
+  gem "faker", "~> 1.1.2"
+  gem "capybara", "~> 2.1.0"
+  gem "database_cleaner", "~> 1.0.1"
+  gem "selenium-webdriver", "~> 2.35.1"
+  gem "launchy", "~> 2.3.0"
 end
+
 

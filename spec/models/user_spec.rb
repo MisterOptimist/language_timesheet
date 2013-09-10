@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "Words" do
+describe User do
   
 end

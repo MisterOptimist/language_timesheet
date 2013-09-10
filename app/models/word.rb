@@ -1,8 +1,8 @@
 class Word < ActiveRecord::Base
   attr_accessible :english, :khmer, :rndm, :khmersentence, :englishsentence, :phonetic, :english_phonetic
-  
+  validates_presence_of :english, :khmer
 
-   def self.random
+   def self.random 
     rndm = find_by_rndm Date.today
     unless rndm
       update_all :rndm => nil
