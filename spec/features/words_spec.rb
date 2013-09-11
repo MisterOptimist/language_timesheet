@@ -5,10 +5,9 @@ feature 'Word management' do
 		admin = create(:admin)
 
 		visit root_path
-		click_button 'Log In'
+		click_link 'Log In'
 		fill_in 'Email', with: admin.email
-		fill_in 'Password', with: admin.password 
-		click_button 'Log In'
+		fill_in 'Password', with: admin.password
 
 		visit root_path
 		expect{
