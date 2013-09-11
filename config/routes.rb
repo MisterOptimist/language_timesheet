@@ -35,9 +35,8 @@ resources :users do
   end
 end
 
-root :to => 'home#index'
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+  root :to => "home#home"
 end
