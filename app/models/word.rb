@@ -11,4 +11,7 @@ class Word < ActiveRecord::Base
     end
     rndm
   end
+
+  
+
 end

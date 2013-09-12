@@ -1,6 +1,5 @@
 class WordsController < ApplicationController
-  before_filter :authenticate_user!
-   load_and_authorize_resource
+
   # GET /words
   # GET /words.json
   def index
@@ -13,6 +12,14 @@ class WordsController < ApplicationController
     end
   end
 
+  def list
+    @words = Word.page(params[:page]).per(12)
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @words}
+    end
+  end
   # GET /words/1
   # GET /words/1.json
   def show

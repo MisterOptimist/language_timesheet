@@ -3,7 +3,11 @@ TimesheetApp::Application.routes.draw do
 
 
 
-  resources :words
+  resources :words do
+    collection do
+      get 'list'
+    end
+  end
 
 
   get "resources/khmerfont"

@@ -28,7 +28,7 @@ feature 'Word management' do
 		
 		expect(page).to_not have_content "Manage Word of the Day"
 		click_link('Word of the Day')
-		expect(page).to have_content "Listing Words"
+		expect(page).to have_content "Listing words"
 
 	end
 
