@@ -3,7 +3,11 @@ TimesheetApp::Application.routes.draw do
 
 
 
-  resources :words
+  resources :words do
+    collection do
+      get 'list'
+    end
+  end
 
 
   get "resources/khmerfont"
@@ -35,9 +39,8 @@ resources :users do
   end
 end
 
-root :to => 'home#index'
   authenticated :user do
     root :to => 'home#index'
   end
-  root :to => "home#index"
+  root :to => "home#home"
 end
