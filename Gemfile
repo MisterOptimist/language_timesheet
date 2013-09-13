@@ -25,7 +25,7 @@ gem 'morrisjs-rails'
 gem 'raphael-rails'
 gem 'groupdate'
 gem 'public_activity'
-gem 'pg'
+gem 'pg', "~> 0.16.0"
 gem "friendly_id", "~> 4.0.9"
 gem 'seed_dump'
 gem 'figaro'
