@@ -1,9 +1,13 @@
- <div class="row-fluid"><div id="login-box"><h1>Login</h1><br>
-                 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-                      <%= f.input :email, :autofocus => true %>
-                      <%= f.input :password %>
-                      <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
-                      <%= f.button :submit, "Sign in", :class => 'btn' %>
-                    <% end %>
-                  </div>
-                  </div>
+<div class="row">
+    <div class="span4 offset4">
+    <div class="well">
+    <legend>Sign In</legend>
+    <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+         <%= f.input :email, :autofocus => true, :class => "span3" %>
+         <%= f.input :password, :class => "span3" %>
+         <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+         <%= f.button :submit, "Sign in", :class => 'btn' %>
+    <% end %>
+    </div>
+    </div>
+</div>
