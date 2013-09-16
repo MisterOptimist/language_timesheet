@@ -15,8 +15,8 @@ A web application that could help manage staff's language timesheets. Something 
 5. Pagination with [Kaminari](https://github.com/amatsuda/kaminari)
 6. Stats with [Morris.js](https://github.com/oesmith/morris.js/)
 7. Activity logs with [Public_activity](https://github.com/pokonski/public_activity)
-8. Testing wit [Rspec](http://rspec.info)/[capybara](https://github.com/jnicklas/capybara)/[factory_girl](https://github.com/thoughtbot/factory_girl)
-9.[Forem](http://github.com/radar/forem)
+8. Testing wit [Rspec](http://rspec.info)/[capybara](https://github.com/jnicklas/capybara)/[factory_girl](https://github.com/thoughtbot/factory_girl) 
+9. [Forem](http://github.com/radar/forem)
 
 
 
