@@ -1,12 +1,12 @@
-==Language Timesheet Tracker
+##Language Timesheet Tracker
 
 This site is a language timesheet manager. This was built specifically for the needs at [UofN Battambang](http://www.uofnbattambang.com) in Battambang, Cambodia.
 
-==The Goal
+##The Goal
 
 A web application that could help manage staff's language timesheets. Something that would be easy for the staff to use and for the admin to check up on their hours.
 
-==The Technologies
+##The Technologies
 
 1. Ruby on Rails
 2. Built on [Bootstrap](http://getbootstrap.com)
