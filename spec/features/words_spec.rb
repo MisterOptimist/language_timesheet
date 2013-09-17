@@ -31,5 +31,4 @@ feature 'Word management' do
 		expect(page).to have_content "Listing words"
 
 	end
-
 end

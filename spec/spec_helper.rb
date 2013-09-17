@@ -11,7 +11,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
   config.include Devise::TestHelpers, :type => :controller
-  config.extend ControllerMacros, :type => :controller
+  config.include ControllerMacros, :type => :controller
+  config.include LoginMacros, :type => :feature
   config.include FactoryGirl::Syntax::Methods
   # ## Mock Framework
   #
