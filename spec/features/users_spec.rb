@@ -14,11 +14,7 @@ feature 'User permissions' do
 	end 
 	scenario "Cannot view admin menu" do 
 		user = create(:user)
-		visit root_path
-		click_link 'Log In'
-		fill_in 'Email', with: user.email
-		fill_in 'Password', with: user.password
-		click_button('Sign in')
+		sign_in user
 
 		expect(page).to_not have_link "Check Hours"
           	expect(page).to_not have_link "Staff Members"
@@ -26,21 +22,5 @@ feature 'User permissions' do
           	expect(page).to_not have_link "Manage Word of the Day"
           	expect(page).to_not have_link "Settings"
 	end
-	scenario "Cannot view admin menu" do 
-		user = create(:user)
-		visit root_path
-		click_link 'Log In'
-		fill_in 'Email', with: user.email
-		fill_in 'Password', with: user.password
-		click_button('Sign in')
-
-		expect(page).to_not have_link "Check Hours"
-          	expect(page).to_not have_link "Staff Members"
-          	expect(page).to_not have_link "Manage Forums"
-          	expect(page).to_not have_link "Manage Word of the Day"
-          	expect(page).to_not have_link "Settings"
-	end
-
-
-
 end
+
